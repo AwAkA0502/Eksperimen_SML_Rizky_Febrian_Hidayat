@@ -103,10 +103,7 @@ def preprocess_pipeline(input_path, output_path):
     print("\nPIPELINE SELESAI!")
 
 if __name__ == "__main__":
-    # DISESUAIKAN UNTUK GITHUB ACTIONS
-    # bmw.csv harus berada di root repository
-    # output akan disimpan di folder preprocessing/namadataset_preprocessing/
-    INPUT = 'bmw.csv' 
+    INPUT = 'bmw_raw/bmw.csv' 
     OUTPUT = 'preprocessing/namadataset_preprocessing/bmw_preprocessing.csv'
     
     preprocess_pipeline(INPUT, OUTPUT)

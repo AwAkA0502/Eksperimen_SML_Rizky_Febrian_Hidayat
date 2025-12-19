@@ -20,7 +20,7 @@ jobs:
         run: pip install pandas numpy scikit-learn
 
       - name: Run Preprocessing Script
-        run: python preprocessing/automate_Rizky.py
+        run: python preprocessing/automate_rizky_febrian_hidayat.py
 
       - name: Commit and Push Changes
         run: |
