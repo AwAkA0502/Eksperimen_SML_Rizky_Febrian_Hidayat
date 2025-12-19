@@ -1,10 +1,14 @@
-name: BMW Preprocessing Workflow
-on: [push]
+name: BMW Auto Preprocessing
+
+on:
+  push:
+    branches: [ main ]
+
 jobs:
-  run-logic:
+  preprocess:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Setup Python
@@ -12,16 +16,16 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
-        run: pip install pandas scikit-learn
+      - name: Install Dependencies
+        run: pip install pandas numpy scikit-learn
 
-      - name: Run Script
+      - name: Run Preprocessing Script
         run: python preprocessing/automate_Rizky.py
 
-      - name: Push results
+      - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Auto-process BMW data" || echo "No changes"
+          git add preprocessing/namadataset_preprocessing/
+          git commit -m "Update: bmw_preprocessing.csv via GitHub Actions" || echo "No changes to commit"
           git push
