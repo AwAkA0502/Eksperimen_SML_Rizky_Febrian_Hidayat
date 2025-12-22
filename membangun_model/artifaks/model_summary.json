@@ -1,0 +1,25 @@
+{
+    "model_name": "CatBoost Regressor (Tuned)",
+    "best_parameters": {
+        "depth": 6,
+        "iterations": 200,
+        "l2_leaf_reg": 1,
+        "learning_rate": 0.1
+    },
+    "performance_metrics": {
+        "r2_score": 0.9077538985013139,
+        "mae": 1635.85306140321,
+        "rmse": 2219.882183902888
+    },
+    "features_used": [
+        "year",
+        "mileage",
+        "tax",
+        "mpg",
+        "engineSize",
+        "model_encoded",
+        "transmission_encoded",
+        "fuelType_encoded"
+    ],
+    "timestamp": "2025-12-19 21:23:54"
+}
